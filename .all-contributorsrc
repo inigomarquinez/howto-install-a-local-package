@@ -1,0 +1,42 @@
+{
+  "projectName": "how-to-install-a-local-package",
+  "projectOwner": "inigomarquinez",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "inigomarquinez",
+      "name": "Íñigo Marquínez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25435858?v=4",
+      "profile": "https://github.com/inigomarquinez",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "baumannzone",
+      "name": "Jorge Baumann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5422102?v=4",
+      "profile": "https://instagram.com/baumannzone",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "robertoHeCi",
+      "name": "robertoHeCi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58053533?v=4",
+      "profile": "https://github.com/robertoHeCi",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
