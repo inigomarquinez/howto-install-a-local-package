@@ -1,28 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Page, Button } from '@ks/my-local-package';
 
-import { Button } from '@ks/how-to-develop-a-package-locally'
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button primary={true} label='Button'/>,
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+  <Page />
+  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Button
+      primary
+      label='Accept'
+      onClick={() => alert('I\'m a button from the local package!')}
+    />
+  </div>
+  </>
+);
 
 export default App;
