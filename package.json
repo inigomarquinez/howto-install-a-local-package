@@ -1,14 +1,13 @@
 {
-  "name": "how-to-install-a-local-package",
+  "name": "howto-install-a-local-package",
   "description": "Example app to explain how to use a local package",
   "version": "1.0.0",
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/inigomarquinez/how-to-install-a-local-package/issues"
+    "url": "https://github.com/inigomarquinez/howto-install-a-local-package/issues"
   },
   "dependencies": {
-    "@ks/how-to-develop-a-package-locally": "^1.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
