@@ -14,6 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "relative-deps": "^1.0.7",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
@@ -25,7 +26,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "prepare": "relative-deps"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "relativeDependencies": {
+    "@ks/how-to-develop-a-package-locally": "../howto-develop-a-package-locally"
   }
 }
