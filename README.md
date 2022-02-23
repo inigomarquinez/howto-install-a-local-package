@@ -27,7 +27,7 @@ npm link @ks/my-local-package # link-install the package
 
 Take a look at the following image, where we can see that after running `npm link @ks/my-local-package` we can find in the `node_modules` folder a symlink to the local package:
 
-![symlink](/assests/symlink.png)
+![symlink](assets/symlink.png)
 
 
 ### <Alternative #2>
