@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import '@ks/my-local-package/dist/index.css';
+import '@ks/how-to-develop-a-package-locally/dist/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

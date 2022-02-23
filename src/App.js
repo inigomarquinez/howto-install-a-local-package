@@ -1,4 +1,4 @@
-import { Page, Button } from '@ks/my-local-package';
+import { Page, Button } from '@ks/how-to-develop-a-package-locally';
 
 const App = () => (
   <>
