@@ -34,6 +34,73 @@ Take a look at the following image, where we can see that after running `npm lin
 
 ### <Alternative #3>
 
+### 🎨 [Verdaccio](https://verdaccio.org/) 
+
+#### What is Verdaccio?
+[Oficial documentation](https://verdaccio.org/docs/what-is-verdaccio)
+- Verdaccio is, apart from a **green color popular in late medieval Italy for fresco painting,** a lightweight proxy and private packages registry.
+- It can be configured as required, as well as hosting private node packages.
+- It allows all client package managers such npm, yarn and pnpm
+
+### How to use it? [Official documentation](https://verdaccio.org/docs/installation/)
+
+#### Locally
+- Run `npm install --global verdaccio`
+- Run `verdaccio` in the terminal
+- Visit [this url](http://localhost:4873/)
+
+#### Using Docker without config 
+- Run `docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio`
+- Visit [this url](http://localhost:4873/) 
+
+#### Using Docker with custom config
+- Create a folder called `verdaccio-config`
+- Create the `config.yml` file
+    ```yml
+    storage: ./storage
+    auth:
+      htpasswd:
+        file: ./htpasswd
+    uplinks:
+      npmjs:
+        url: https://registry.npmjs.org/
+    packages:
+      "@*/*":
+        access: $all
+        publish: $authenticated
+        proxy: npmjs
+      "**":0
+        proxy: npmjs
+    logs:
+      - { type: stdout, format: pretty, level: http }
+    ```
+   
+- Create a `docker-compose.yml` file with this
+  
+  ```dockerfile
+  version: '3.3'
+  services:
+    verdaccio:
+      container_name: verdaccio-smiths
+      image: verdaccio/verdaccio:latest
+      environment:
+       - VERDACCIO_PORT=9000
+      ports:
+       - '9000:9000'
+      volumes:
+        - './verdaccio-config:/verdaccio/conf'  ```
+  
+- Run `docker-compose up`
+
+#### How to publish a package?
+
+- Run `npm run build` in your package
+- If you have a user already created run `npm login` , otherwise run `npm adduser --registry http://host:port/`
+- Run `npm publish --registry http://host:port/`
+- Visit `http://host:port/` to see your package information
+
+
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -47,9 +114,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/inigomarquinez"><img src="https://avatars.githubusercontent.com/u/25435858?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Íñigo Marquínez</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=inigomarquinez" title="Code">💻</a></td>
-    <td align="center"><a href="https://instagram.com/baumannzone"><img src="https://avatars.githubusercontent.com/u/5422102?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jorge Baumann</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=baumannzone" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/robertoHeCi"><img src="https://avatars.githubusercontent.com/u/58053533?v=4?s=100" width="100px;" alt=""/><br /><sub><b>robertoHeCi</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=robertoHeCi" title="Code">💻</a></td>
+    <td style="text-align: center"><a href="https://github.com/inigomarquinez"><img src="https://avatars.githubusercontent.com/u/25435858?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Íñigo Marquínez</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=inigomarquinez" title="Code">💻</a></td>
+    <td style="text-align: center"><a href="https://instagram.com/baumannzone"><img src="https://avatars.githubusercontent.com/u/5422102?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jorge Baumann</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=baumannzone" title="Code">💻</a></td>
+    <td style="text-align: center"><a href="https://github.com/robertoHeCi"><img src="https://avatars.githubusercontent.com/u/58053533?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Roberto Hernández</b></sub></a><br /><a href="https://github.com/inigomarquinez/howto-install-a-local-package/commits?author=robertoHeCi" title="Code">💻</a></td>
   </tr>
 </table>
 
