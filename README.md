@@ -36,13 +36,12 @@ Take a look at the following image, where we can see that after running `npm lin
 
 ### 🎨 [Verdaccio](https://verdaccio.org/) 
 
-#### What is Verdaccio?
-[Oficial documentation](https://verdaccio.org/docs/what-is-verdaccio)
+#### What is Verdaccio? [Official documentation](https://verdaccio.org/docs/what-is-verdaccio)
 - Verdaccio is, apart from a **green color popular in late medieval Italy for fresco painting,** a lightweight proxy and private packages registry.
 - It can be configured as required, as well as hosting private node packages.
 - It allows all client package managers such npm, yarn and pnpm
 
-### How to use it? [Official documentation](https://verdaccio.org/docs/installation/)
+#### How to use it? [Official documentation](https://verdaccio.org/docs/installation/)
 
 #### Locally
 - Run `npm install --global verdaccio`
@@ -53,7 +52,7 @@ Take a look at the following image, where we can see that after running `npm lin
 - Run `docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio`
 - Visit [this url](http://localhost:4873/) 
 
-#### Using Docker with custom config
+#### Using Docker with custom config [Official documentation](https://verdaccio.org/docs/configuration/)
 - Create a folder called `verdaccio-config`
 - Create the `config.yml` file
     ```yml
