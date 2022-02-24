@@ -37,9 +37,10 @@ Take a look at the following image, where we can see that after running `npm lin
 ### 🎨 [Verdaccio](https://verdaccio.org/) 
 
 #### What is Verdaccio? [Official documentation](https://verdaccio.org/docs/what-is-verdaccio)
-- Verdaccio is, apart from a **green color popular in late medieval Italy for fresco painting,** a lightweight proxy and private packages registry.
+- Verdaccio is, apart from a **green color popular in late medieval Italy for fresco painting(method of painting water-based pigments on freshly applied plaster, usually on wall surfaces),** a lightweight proxy and private packages registry.
 - It can be configured as required, as well as hosting private node packages.
 - It allows all client package managers such npm, yarn and pnpm
+- It provides Docker and Kubernetes support
 
 #### How to use it? [Official documentation](https://verdaccio.org/docs/installation/)
 
@@ -99,7 +100,23 @@ Take a look at the following image, where we can see that after running `npm lin
 - Run `npm publish --registry http://host:port/`
 - Visit `http://host:port/` to see your package information
 
+#### Usages
 
+- Create your own private package registry
+- Reduce the CI process time caching the packages
+- Testing monorepos and the deployment in the registry
+- As a backup for packages during the CI process.
+- Personal usage, when you have different packages related from each others.
+- Teacher purposes (Sometimes npm mark packages as spam)
+- It allows you to use AWS or Google cloud to store the packages caché
+- Uplinks: You can configure it to define the proxy that you want to user in each package.
+
+
+#### Interesting links
+- [Github action](https://github.com/verdaccio/github-actions/tree/master/publish)
+- [Official documentation](https://verdaccio.org/)
+- [Talk about verdaccio (ES)](https://www.youtube.com/watch?v=nFAGvWdHPP4)
+- [Talk about verdaccio (EN)](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
