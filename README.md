@@ -77,18 +77,19 @@ Take a look at the following image, where we can see that after running `npm lin
    
 - Create a `docker-compose.yml` file with this
   
-  ```dockerfile
-  version: '3.3'
-  services:
-    verdaccio:
-      container_name: verdaccio-smiths
-      image: verdaccio/verdaccio:latest
-      environment:
-       - VERDACCIO_PORT=9000
-      ports:
-       - '9000:9000'
-      volumes:
-        - './verdaccio-config:/verdaccio/conf'  ```
+    ```yml
+      version: '3.3'
+      services:
+        verdaccio:
+          container_name: verdaccio-smiths
+          image: verdaccio/verdaccio:latest
+          environment:
+            - VERDACCIO_PORT=9000
+          ports:
+            - '9000:9000'
+          volumes:
+            - './verdaccio-config:/verdaccio/conf'
+    ```
   
 - Run `docker-compose up`
 
